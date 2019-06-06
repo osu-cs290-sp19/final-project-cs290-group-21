@@ -62,7 +62,7 @@ function buyGPU(type) {
 function buyINF(type) {
     infa[type]++;
     value += infp[type];
-    money -= infc[type];
+    hessCoin -= infc[type];
     infc[type] *= 1.15;
 }
 var mine = document.getElementById("clicker").addEventListener("click", function() {
@@ -70,16 +70,16 @@ var mine = document.getElementById("clicker").addEventListener("click", function
 });
 //--------------------------GPU-------------------------------
 var buyGPU0 = document.getElementById("gpu0").addEventListener("click", function() {
-    if (gpuc[0] <= money)
+    if (gpuc[0] <= hessCoin)
         buyGPU(0);
 });
 var buyGPU1 = document.getElementById("gpu1").addEventListener("click", function() {
-    if (gpuc[1] <= money)
+    if (gpuc[1] <= hessCoin)
         buyGPU(1);
 });
 //--------------------------INF-------------------------------
 var buyINF0 = document.getElementById("inf0").addEventListener("click", function() {
-    if (infc[0] <= money)
+    if (infc[0] <= hessCoin)
         buyINF(0);
 });
 
