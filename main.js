@@ -2,18 +2,6 @@
 function save() {
 
 }
-function reset() {
-    var hessCoin = 0;
-    var value = 1;
-    var perClick = 0;
-    var money = 0;
-    var gpua = [1,0,0,0,0,0,0];
-    var infa = [0,0,0,0,0,0,0];
-    var gpuc = [1,10,100,1000,10000,100000,1000000];
-    var infc = [1,10,100,1000,10000,100000,1000000];
-    var gpup = [1,10,100,1000,10000,100000,1000000];
-    var infp = [1,10,100,1000,10000,100000,1000000];
-}
 var save = document.getElementById("save").addEventListener("click", function() {
     save();
 });
@@ -33,17 +21,19 @@ var money = 0;
 //gpu[0] = hamster wheel value will be amount
 //amount of things
 var gpua = [1,0,0,0,0,0,0];
-var infa = [0,0,0,0,0,0,0];
+var infa = [0,1,0,0,0,0,0];
 //cost of things
 var gpuc = [1,10,100,1000,10000,100000,1000000];
 var infc = [1,10,100,1000,10000,100000,1000000];
 //power of things (may not be needed)
 var gpup = [1,10,100,1000,10000,100000,1000000];
 var infp = [1,10,100,1000,10000,100000,1000000];
+//Time scale
+var mTime = 17;
 
 //Makes new hesscoin
 function makeCoin() {
-    hessCoin += value * perClick;
+    hessCoin += perClick;
     money += value;
 }
 //calculates new price after purch 15%
@@ -66,24 +56,25 @@ function buyINF(type) {
     hessCoin -= infc[type];
     infc[type] *= 1.15;
 }
-function valueCalc () {
-    value += infp[type];
-}
+
 var Game = {};
 //Get HTML
 window.onload = function () {
     var hessAmount = document.getElementById("hessCoins");
-    var hessValue = document.getElementById("perClick");
+    var hessValue = document.getElementById("value");
     var hessMoney = document.getElementById("money");
     //Per Frame
     function update() {
+        value = totalprice();
+        money += value * hessCoin;
+
         hessAmount.innerHTML = hessCoin;
-        hessValue.innerHTML = perClick;
-        hessMoney.innerHTML = money;
-        setTimeout(update, 100);
+        hessValue.innerHTML = value;
+        hessMoney.innerHTML = Math.trunc(money);
+
+        setTimeout(update, mTime);
     }
     update();
-
 }
 
 Game.mine = document.getElementById("clicker").addEventListener("click", function() {
@@ -122,4 +113,14 @@ function totalprice () {
         total += infa[i] * infp[i];
     }
     return total;
+}
+function reset() {
+    hessCoin = 0;
+    value = 1;
+    perClick = 1;
+    money = 0;
+    gpua = [1,0,0,0,0,0,0];
+    infa = [0,0,0,0,0,0,0];
+    gpuc = [1,10,100,1000,10000,100000,1000000];
+    infc = [1,10,100,1000,10000,100000,1000000];
 }
