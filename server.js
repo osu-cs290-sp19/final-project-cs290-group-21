@@ -18,8 +18,8 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 //send to homepage
-app.get('/', function(req, res, next){
-    res.status(200).render('homePage');
+app.get('/highScores', function(req, res, next){
+    res.status(200).render('highScores');
 });
 
 //404 if page doesn't exist

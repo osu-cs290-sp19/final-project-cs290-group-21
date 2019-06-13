@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>High Scores</title>
+    <link rel="stylesheet" href="highScores.css" media="screen">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.runtime.js" charset="utf-8" defer></script>
+    <script src="/highScoresTemplate.js" charset="utf-8" defer></script>
+    <script src="/highScores.js" charset="utf-8" defer></script>
+</head>
+
+<body>
+<header>
+    <h1>World's Richest HessCoin Miners</h1>
+    <nav class="navbar">
+        <a href="index.html" id="exit">Return to Game</a>
+    </nav>
+</header>
+<table class="hs-table">
+    <tr>
+        <th>Name</th>
+        <th>HessCoins Collected</th>
+    </tr>
+
+    {{> scores}}
+</table>
+</body>
+</html>
