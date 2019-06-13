@@ -31,17 +31,21 @@ Data.infc = [1,10,100,1000,10000,100000,1000000];
 //power of things (may not be needed)
 Data.gpup = [1,10,100,1000,10000,100000,1000000];
 Data.infp = [1,10,100,1000,10000,100000,1000000];
+
+var result = '';
 //Time scale
 var mTime = 17;
 
 
-function makeGibberish() {
-    var result = '';
+function makeGibberish(result) {
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 31; i++) {
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
+    result += ' ';
+    if (result.length > 512)
+        return result.slice(32);
     return result;
 }
 //Makes new hesscoin
@@ -147,8 +151,9 @@ window.onload = function () {
 }
 
 Game.mine = document.getElementById("clicker").addEventListener("click", function() {
-    //var gibberish = document.getElementById("gibberish");
-    //gibberish.innerHTML = makeGibberish();
+    var gibberish = document.getElementById("hash");
+    result = makeGibberish(result);
+    gibberish.innerHTML = result;
     makeCoin();
 });
 
@@ -234,7 +239,7 @@ function reset() {
     Data.value = 1;
     Data.perClick = 1;
     Data.money = 0;
-    Data.gpua = [1,0,0,0,0,0,0];
+    Data.gpua = [0,0,0,0,0,0,0];
     Data.infa = [0,0,0,0,0,0,0];
     Data.gpuc = [1,10,100,1000,10000,100000,1000000];
     Data.infc = [1,10,100,1000,10000,100000,1000000];

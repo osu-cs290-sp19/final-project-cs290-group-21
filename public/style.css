@@ -22,32 +22,27 @@ h2{
 
 }
 
-.clickerstyle {
-	box-shadow:inset 0px 34px 0px -15px #3a3b3b;
-	background-color:#3a3b3b;
-	border:6px solid #858585;
-    display: center;
-    width: 160px;
-    height: 70px;
-	cursor:pointer;
-	color:#19d626;
-	font-family:Courier New;
-	font-size:28px;
-	font-weight:bold;
-	padding:10px 5px;
-	text-decoration:none;
-    text-shadow:0px 5px 0px #333;
-	box-shadow: 0 9px rgb(41, 41, 41);
+/* navbar style */
+.navbar {
+	background-color: #333;
+	font-size: 22px;
+	line-height: 22px;
+	color: #19d626;
+	display: flex;
+	justify-content: center;
 	
+	
+  }
 
-}
-.clicker:hover {
-	background-color:#3a3b3b;
-}
-.clicker:active {
-	position:relative;
-	transform: translateY(2px);
-}
+.navbar a {
+	padding: 8px 10px;
+	color: #19d626;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;	
+  }
+
+
 .flexcontainer{
 	display: flex;
 	flex-direction: row;
@@ -76,6 +71,7 @@ h2{
 		
 	
 }
+/*middle style*/
 
 .middlestyle{
 	
@@ -95,9 +91,52 @@ h2{
 		background-color: #333;
 	
 }
+/* mine button */
+.clickerstyle {
+	box-shadow: 0 9px #3a3b3b;
+	background-color:#3a3b3b;
+	border:6px solid #858585;
+    display: center;
+    width: 160px;
+    height: 70px;
+	cursor: url(https://i.imgur.com/emJel61.png), auto;
+	color:#19d626;
+	font-family:Courier New;
+	font-size:28px;
+	font-weight:bold;
+	padding:10px 5px;
+	text-decoration:none;
+    text-shadow:0px 5px 0px #333;
+	box-shadow: 5px 7px black;
+	margin-bottom: 5px;
+	margin-top:-5px;
+	
+
+}
+.clicker:hover {
+	background-color:#3a3b3b;
+}
+#clicker:active {
+	
+	box-shadow: 4px 5px black;
+	transform: translateY(4px);
+}
+
+
+#hash{
+	display: flex;
+	flex-wrap: wrap;
+	width: 300px;
+	color: #19d626;
+	margin-bottom: 30px;
+	
+}
 #midinfo{
 font-weight:bold;
 
+}
+#hesscoinsat{
+	text-indent:.8em;
 }
 #mid1{
 	display: flex;
@@ -118,6 +157,8 @@ font-weight:bold;
 	margin-top: 10px;
 
 }
+
+/* right style */
 .infstyle{
 	
 		display: flex;
@@ -142,25 +183,7 @@ font-weight:bold;
 	color: whitesmoke;
 }
 
-
-.navbar {
-	background-color: #333;
-	font-size: 22px;
-	line-height: 22px;
-	color: #19d626;
-	display: flex;
-	justify-content: center;
-	
-	
-  }
-
-.navbar a {
-	padding: 8px 10px;
-	color: #19d626;
-	display: inline-block;
-	text-align: center;
-	text-decoration: none;	
-  }
+/* right style */
 .gpubutton{
 	display: flex;
 	flex-direction: row;
@@ -192,4 +215,35 @@ font-weight:bold;
 	width: 300px;
 	height: 30px;
 	margin: 2px;
+}
+
+#highscore{
+	color: #19d626; 
+	text-align: center;
+	font-size: 40px;
+	background-color: #333;
+	margin-bottom:-5px;
+	margin-top:0px;
+}
+
+.hs-table{
+	display: flex;
+	justify-content: center;
+	
+	border-color: #333;
+}
+table{	
+	margin-top: 10px;
+	border-collapse: collapse;
+	
+}
+th, td{
+	color: #19d626;
+	border-style:solid;
+	border-color: #333;
+	border-width: 5px;
+	font-weight: bold;
+}
+#tablekey{
+	font-size: 35px;
 }
