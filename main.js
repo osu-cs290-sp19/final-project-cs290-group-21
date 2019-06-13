@@ -53,7 +53,7 @@ function makeCoin() {
 function buyGPU(type) {
     Data.gpua[type] += 1;
     Data.perClick += Data.gpup[type];
-    Data.money -= Data.gpuc[type];
+    Data.hessCoin -= Data.gpuc[type];
     Data.gpuc[type] *= 1.15;
 }
 //purchase a new inf
@@ -61,7 +61,7 @@ function buyGPU(type) {
 function buyINF(type) {
     Data.infa[type] += 1;
     Data.value += Data.infp[type];
-    Data.money -= Data.infc[type];
+    Data.hessCoin -= Data.infc[type];
     Data.infc[type] *= 1.15;
 }
 var Game = {};
@@ -106,7 +106,8 @@ window.onload = function () {
         Data.value = totalprice();
         Data.money = Data.value * Data.hessCoin;
 
-        hessAmount.innerHTML = Data.hessCoin;
+        //may cause math problems
+        hessAmount.innerHTML = Math.trunc(Data.hessCoin);
         hessValue.innerHTML = Data.value;
         hessMoney.innerHTML = Math.trunc(Data.money);
 
@@ -155,16 +156,16 @@ Game.mine = document.getElementById("clicker").addEventListener("click", functio
 
 //--------------------------GPU-------------------------------
 Game.buyGPU0 = document.getElementById("gpu0").addEventListener("click", function() {
-    if (Data.gpuc[0] <= money)
+    if (Data.gpuc[0] <= Data.hessCoin)
         buyGPU(0);
 });
 Game.buyGPU1 = document.getElementById("gpu1").addEventListener("click", function() {
-    if (Data.gpuc[1] <= money)
+    if (Data.gpuc[1] <= Data.hessCoin)
         buyGPU(1);
 });
 //--------------------------INF-------------------------------
 Game.buyINF0 = document.getElementById("inf0").addEventListener("click", function() {
-    if (Data.infc[0] <= money)
+    if (Data.infc[0] <= Data.hessCoin)
         buyINF(0);
 });
 
