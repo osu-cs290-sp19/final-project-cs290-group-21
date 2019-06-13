@@ -127,7 +127,24 @@ h2{
 	color: #19d626;
 	display: inline-block;
 	text-align: center;
-	text-decoration: none;
-
-	
+	text-decoration: none;	
   }
+.gpubutton{
+	display: flex;
+	flex-direction: row;
+	align-content: space-between;
+	justify-content: space-between;
+	padding: 10px 10px;
+	margin: 0 5px;
+
+}
+
+.infbutton{
+	display: flex;
+	flex-direction: row;
+	align-content: space-between;
+	justify-content: space-between;
+	padding: 10px 10px;
+	margin: 0 5px;
+
+}
