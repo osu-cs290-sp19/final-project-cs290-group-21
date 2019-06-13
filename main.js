@@ -67,7 +67,7 @@ window.onload = function () {
     //Per Frame
     function update() {
         Data.value = totalprice();
-        Data.money += Data.value * Data.hessCoin;
+        Data.money = Data.value * Data.hessCoin;
 
         Data.hessAmount.innerHTML = Data.hessCoin;
         Data.hessValue.innerHTML = Data.value;
