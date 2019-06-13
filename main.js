@@ -46,7 +46,7 @@ function makeGibberish() {
 }
 //Makes new hesscoin
 function makeCoin() {
-    Data.hessCoin += Data.perClick;
+    Data.hessCoin += totalperClick(Data.perClick);
 }
 //purchase a new gpu
     //type is array spot
@@ -171,7 +171,7 @@ Game.buyINF0 = document.getElementById("inf0").addEventListener("click", functio
 
 //Stats
 function totalperClick () {
-    var total = 0;
+    var total = 1;
     for (var i = 0; i < 7; i++) {
         total += Data.gpua[i] * Data.gpup[i]; 
     }
