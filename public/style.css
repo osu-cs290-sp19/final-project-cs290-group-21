@@ -16,6 +16,9 @@ h2{
 	color: #19d626; 
 	text-align: center;
 	font-size: 40px;
+	background-color: #333;
+	margin-bottom:-5px;
+	margin-top:0px;
 
 }
 
@@ -52,7 +55,7 @@ h2{
 	justify-content: center;
 	align-items: center;
 	align-content: stretch;
-	border-style: solid;
+	
 }
 .gpustyle{
 
@@ -65,9 +68,12 @@ h2{
 		border-style: solid;
 		border-color: #19d626;
 		border-width: 4px;
-		height: 500px;
+		min-height: 520px;
 		width: 350px;
 		background-color: #333;
+		
+
+		
 	
 }
 
@@ -82,12 +88,35 @@ h2{
 		border-style: solid;
 		border-color: #19d626;
 		border-width: 4px;
-		height: 500px;
+		min-height: 520px;
 		width: 350px;
 		margin: 10px;
 		color: whitesmoke;
 		background-color: #333;
 	
+}
+#midinfo{
+font-weight:bold;
+
+}
+#mid1{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	justify-content: center;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	
+}
+#mid2{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 10px;
+	margin-top: 10px;
+
 }
 .infstyle{
 	
@@ -101,7 +130,7 @@ h2{
 		border-color: #19d626;
 		background-color: #333;
 		border-width: 4px;
-		height: 500px;
+		min-height: 520px;
 		width: 350px;
 }
 #coinsperclick{
@@ -141,6 +170,11 @@ h2{
 	margin: 0 5px;
 	font-weight: bold;
 	color: whitesmoke;
+	border-style: solid;
+	border-color: #858585;
+	width: 300px;
+	height: 30px;
+	margin: 2px;
 
 }
 
@@ -153,4 +187,9 @@ h2{
 	margin: 0 5px;
 	font-weight: bold;
 	color: whitesmoke;
+	border-style: solid;
+	border-color: #858585;
+	width: 300px;
+	height: 30px;
+	margin: 2px;
 }
