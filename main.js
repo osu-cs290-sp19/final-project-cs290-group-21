@@ -64,14 +64,75 @@ window.onload = function () {
     var hessAmount = document.getElementById("hessCoins");
     var hessValue = document.getElementById("value");
     var hessMoney = document.getElementById("money");
+
+    var getGPU0c = document.getElementById("gpu0c");
+    var getGPU0a = document.getElementById("gpu0a");
+    var getGPU1c = document.getElementById("gpu1c");
+    var getGPU1a = document.getElementById("gpu1a");
+    var getGPU2c = document.getElementById("gpu2c");
+    var getGPU2a = document.getElementById("gpu2a");
+    var getGPU3c = document.getElementById("gpu3c");
+    var getGPU3a = document.getElementById("gpu3a");
+    var getGPU4c = document.getElementById("gpu4c");
+    var getGPU4a = document.getElementById("gpu4a");
+    var getGPU5c = document.getElementById("gpu5c");
+    var getGPU5a = document.getElementById("gpu5a");
+    var getGPU6c = document.getElementById("gpu6c");
+    var getGPU6a = document.getElementById("gpu6a");
+
+    var getINF0c = document.getElementById("inf0c");
+    var getINF0a = document.getElementById("inf0a");
+    var getINF1c = document.getElementById("inf1c");
+    var getINF1a = document.getElementById("inf1a");
+    var getINF2c = document.getElementById("inf2c");
+    var getINF2a = document.getElementById("inf2a");
+    var getINF3c = document.getElementById("inf3c");
+    var getINF3a = document.getElementById("inf3a");
+    var getINF4c = document.getElementById("inf4c");
+    var getINF4a = document.getElementById("inf4a");
+    var getINF5c = document.getElementById("inf5c");
+    var getINF5a = document.getElementById("inf5a");
+    var getINF6c = document.getElementById("inf6c");
+    var getINF6a = document.getElementById("inf6a");
+
     //Per Frame
     function update() {
         Data.value = totalprice();
         Data.money = Data.value * Data.hessCoin;
 
-        Data.hessAmount.innerHTML = Data.hessCoin;
-        Data.hessValue.innerHTML = Data.value;
-        Data.hessMoney.innerHTML = Math.trunc(Data.money);
+        hessAmount.innerHTML = Data.hessCoin;
+        hessValue.innerHTML = Data.value;
+        hessMoney.innerHTML = Math.trunc(Data.money);
+
+        getGPU0c = Data.gpuc[0];
+        getGPU0a = Data.gpua[0];
+        getGPU1c = Data.gpuc[1];
+        getGPU1a = Data.gpua[1];
+        getGPU2c = Data.gpuc[2];
+        getGPU2a = Data.gpua[2];
+        getGPU3c = Data.gpuc[3];
+        getGPU3a = Data.gpua[3];
+        getGPU4c = Data.gpuc[4];
+        getGPU4a = Data.gpua[4];
+        getGPU5c = Data.gpuc[5];
+        getGPU5a = Data.gpua[5];
+        getGPU6c = Data.gpuc[6];
+        getGPU6a = Data.gpua[6];
+
+        getINF0c = Data.infc[0];
+        getINF0a = Data.infa[0];
+        getINF1c = Data.infc[1];
+        getINF1a = Data.infa[1];
+        getINF2c = Data.infc[2];
+        getINF2a = Data.infa[2];
+        getINF3c = Data.infc[3];
+        getINF3a = Data.infa[3];
+        getINF4c = Data.infc[4];
+        getINF4a = Data.infa[4];
+        getINF5c = Data.infc[5];
+        getINF5a = Data.infa[5];
+        getINF6c = Data.infc[6];
+        getINF6a = Data.infa[6];
 
         setTimeout(update, mTime);
     }
