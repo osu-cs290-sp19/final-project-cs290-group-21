@@ -6,6 +6,7 @@ var save = document.getElementById("save").addEventListener("click", function() 
     save();
 });
 var reset = document.getElementById("reset").addEventListener("click", function() {
+    confirm("Are you sure you want to reset?");
     reset();
 });
 //-----------------------------GAME LOGIC-------------------------------
@@ -33,19 +34,24 @@ Data.infp = [1,10,100,1000,10000,100000,1000000];
 //Time scale
 var mTime = 17;
 
+
+function makeGibberish() {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < 20; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
 //Makes new hesscoin
 function makeCoin() {
     Data.hessCoin += Data.perClick;
-    Data.money += Data.value;
-}
-//calculates new price after purch 15%
-function newPrice(price) {
-    return Data.price * 1.15;
 }
 //purchase a new gpu
     //type is array spot
 function buyGPU(type) {
-    Data.gpua[type]++;
+    Data.gpua[type] += 1;
     Data.perClick += Data.gpup[type];
     Data.money -= Data.gpuc[type];
     Data.gpuc[type] *= 1.15;
@@ -53,9 +59,9 @@ function buyGPU(type) {
 //purchase a new inf
     //type is array spot
 function buyINF(type) {
-    Data.infa[type]++;
+    Data.infa[type] += 1;
     Data.value += Data.infp[type];
-    Data.hessCoin -= Data.infc[type];
+    Data.money -= Data.infc[type];
     Data.infc[type] *= 1.15;
 }
 var Game = {};
@@ -104,34 +110,34 @@ window.onload = function () {
         hessValue.innerHTML = Data.value;
         hessMoney.innerHTML = Math.trunc(Data.money);
 
-        getGPU0c.innerHTML = Data.gpuc[0];
+        getGPU0c.innerHTML = Math.trunc(Data.gpuc[0]);
         getGPU0a.innerHTML = Data.gpua[0];
-        getGPU1c.innerHTML = Data.gpuc[1];
+        getGPU1c.innerHTML = Math.trunc(Data.gpuc[1]);
         getGPU1a.innerHTML = Data.gpua[1];
-        getGPU2c.innerHTML = Data.gpuc[2];
+        getGPU2c.innerHTML = Math.trunc(Data.gpuc[2]);
         getGPU2a.innerHTML = Data.gpua[2];
-        getGPU3c.innerHTML = Data.gpuc[3];
+        getGPU3c.innerHTML = Math.trunc(Data.gpuc[3]);
         getGPU3a.innerHTML = Data.gpua[3];
-        getGPU4c.innerHTML = Data.gpuc[4];
+        getGPU4c.innerHTML = Math.trunc(Data.gpuc[4]);
         getGPU4a.innerHTML = Data.gpua[4];
-        getGPU5c.innerHTML = Data.gpuc[5];
+        getGPU5c.innerHTML = Math.trunc(Data.gpuc[5]);
         getGPU5a.innerHTML = Data.gpua[5];
-        getGPU6c.innerHTML = Data.gpuc[6];
+        getGPU6c.innerHTML = Math.trunc(Data.gpuc[6]);
         getGPU6a.innerHTML = Data.gpua[6];
 
-        getINF0c.innerHTML = Data.infc[0];
+        getINF0c.innerHTML = Math.trunc(Data.infc[0]);
         getINF0a.innerHTML = Data.infa[0];
-        getINF1c.innerHTML = Data.infc[1];
+        getINF1c.innerHTML = Math.trunc(Data.infc[1]);
         getINF1a.innerHTML = Data.infa[1];
-        getINF2c.innerHTML = Data.infc[2];
+        getINF2c.innerHTML = Math.trunc(Data.infc[2]);
         getINF2a.innerHTML = Data.infa[2];
-        getINF3c.innerHTML = Data.infc[3];
+        getINF3c.innerHTML = Math.trunc(Data.infc[3]);
         getINF3a.innerHTML = Data.infa[3];
-        getINF4c.innerHTML = Data.infc[4];
+        getINF4c.innerHTML = Math.trunc(Data.infc[4]);
         getINF4a.innerHTML = Data.infa[4];
-        getINF5c.innerHTML = Data.infc[5];
+        getINF5c.innerHTML = Math.trunc(Data.infc[5]);
         getINF5a.innerHTML = Data.infa[5];
-        getINF6c.innerHTML = Data.infc[6];
+        getINF6c.innerHTML = Math.trunc(Data.infc[6]);
         getINF6a.innerHTML = Data.infa[6];
 
         setTimeout(update, mTime);
@@ -140,26 +146,28 @@ window.onload = function () {
 }
 
 Game.mine = document.getElementById("clicker").addEventListener("click", function() {
+    //var gibberish = document.getElementById("gibberish");
+    //gibberish.innerHTML = makeGibberish();
     makeCoin();
 });
-/*NEED HTML
+
 
 
 //--------------------------GPU-------------------------------
 Game.buyGPU0 = document.getElementById("gpu0").addEventListener("click", function() {
-    if (gpuc[0] <= hessCoin)
+    if (Data.gpuc[0] <= money)
         buyGPU(0);
 });
 Game.buyGPU1 = document.getElementById("gpu1").addEventListener("click", function() {
-    if (gpuc[1] <= hessCoin)
+    if (Data.gpuc[1] <= money)
         buyGPU(1);
 });
 //--------------------------INF-------------------------------
 Game.buyINF0 = document.getElementById("inf0").addEventListener("click", function() {
-    if (infc[0] <= hessCoin)
+    if (Data.infc[0] <= money)
         buyINF(0);
 });
-*/
+
 
 //Stats
 function totalperClick () {
