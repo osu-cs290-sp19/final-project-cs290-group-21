@@ -22,8 +22,8 @@ Data.money = 0;
 //arrays for things purchased------------------
 //gpu[0] = hamster wheel value will be amount
 //amount of things
-Data.gpua = [1,0,0,0,0,0,0];
-Data.infa = [0,1,0,0,0,0,0];
+Data.gpua = [0,0,0,0,0,0,0];
+Data.infa = [0,0,0,0,0,0,0];
 //cost of things
 Data.gpuc = [1,10,100,1000,10000,100000,1000000];
 Data.infc = [1,10,100,1000,10000,100000,1000000];
@@ -104,35 +104,35 @@ window.onload = function () {
         hessValue.innerHTML = Data.value;
         hessMoney.innerHTML = Math.trunc(Data.money);
 
-        getGPU0c = Data.gpuc[0];
-        getGPU0a = Data.gpua[0];
-        getGPU1c = Data.gpuc[1];
-        getGPU1a = Data.gpua[1];
-        getGPU2c = Data.gpuc[2];
-        getGPU2a = Data.gpua[2];
-        getGPU3c = Data.gpuc[3];
-        getGPU3a = Data.gpua[3];
-        getGPU4c = Data.gpuc[4];
-        getGPU4a = Data.gpua[4];
-        getGPU5c = Data.gpuc[5];
-        getGPU5a = Data.gpua[5];
-        getGPU6c = Data.gpuc[6];
-        getGPU6a = Data.gpua[6];
+        getGPU0c.innerHTML = Data.gpuc[0];
+        getGPU0a.innerHTML = Data.gpua[0];
+        getGPU1c.innerHTML = Data.gpuc[1];
+        getGPU1a.innerHTML = Data.gpua[1];
+        getGPU2c.innerHTML = Data.gpuc[2];
+        getGPU2a.innerHTML = Data.gpua[2];
+        getGPU3c.innerHTML = Data.gpuc[3];
+        getGPU3a.innerHTML = Data.gpua[3];
+        getGPU4c.innerHTML = Data.gpuc[4];
+        getGPU4a.innerHTML = Data.gpua[4];
+        getGPU5c.innerHTML = Data.gpuc[5];
+        getGPU5a.innerHTML = Data.gpua[5];
+        getGPU6c.innerHTML = Data.gpuc[6];
+        getGPU6a.innerHTML = Data.gpua[6];
 
-        getINF0c = Data.infc[0];
-        getINF0a = Data.infa[0];
-        getINF1c = Data.infc[1];
-        getINF1a = Data.infa[1];
-        getINF2c = Data.infc[2];
-        getINF2a = Data.infa[2];
-        getINF3c = Data.infc[3];
-        getINF3a = Data.infa[3];
-        getINF4c = Data.infc[4];
-        getINF4a = Data.infa[4];
-        getINF5c = Data.infc[5];
-        getINF5a = Data.infa[5];
-        getINF6c = Data.infc[6];
-        getINF6a = Data.infa[6];
+        getINF0c.innerHTML = Data.infc[0];
+        getINF0a.innerHTML = Data.infa[0];
+        getINF1c.innerHTML = Data.infc[1];
+        getINF1a.innerHTML = Data.infa[1];
+        getINF2c.innerHTML = Data.infc[2];
+        getINF2a.innerHTML = Data.infa[2];
+        getINF3c.innerHTML = Data.infc[3];
+        getINF3a.innerHTML = Data.infa[3];
+        getINF4c.innerHTML = Data.infc[4];
+        getINF4a.innerHTML = Data.infa[4];
+        getINF5c.innerHTML = Data.infc[5];
+        getINF5a.innerHTML = Data.infa[5];
+        getINF6c.innerHTML = Data.infc[6];
+        getINF6a.innerHTML = Data.infa[6];
 
         setTimeout(update, mTime);
     }
@@ -170,7 +170,7 @@ function totalperClick () {
     return total;
 }
 function totalprice () {
-    var total = 0;
+    var total = 1;
     for (var i = 0; i < 7; i++) {
         total += Data.infa[i] * Data.infp[i];
     }
