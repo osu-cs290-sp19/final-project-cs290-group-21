@@ -22,8 +22,8 @@ Data.money = 0;
 //arrays for things purchased------------------
 //gpu[0] = hamster wheel value will be amount
 //amount of things
-Data.gpua = [1,0,0,0,0,0,0];
-Data.infa = [0,1,0,0,0,0,0];
+Data.gpua = [0,0,0,0,0,0,0];
+Data.infa = [0,0,0,0,0,0,0];
 //cost of things
 Data.gpuc = [1,10,100,1000,10000,100000,1000000];
 Data.infc = [1,10,100,1000,10000,100000,1000000];
@@ -170,7 +170,7 @@ function totalperClick () {
     return total;
 }
 function totalprice () {
-    var total = 0;
+    var total = 1;
     for (var i = 0; i < 7; i++) {
         total += Data.infa[i] * Data.infp[i];
     }
