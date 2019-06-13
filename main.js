@@ -163,10 +163,54 @@ Game.buyGPU1 = document.getElementById("gpu1").addEventListener("click", functio
     if (Data.gpuc[1] <= Data.hessCoin)
         buyGPU(1);
 });
+Game.buyGPU2 = document.getElementById("gpu2").addEventListener("click", function() {
+    if (Data.gpuc[2] <= Data.hessCoin)
+        buyGPU(2);
+});
+Game.buyGPU3 = document.getElementById("gpu3").addEventListener("click", function() {
+    if (Data.gpuc[3] <= Data.hessCoin)
+        buyGPU(3);
+});
+Game.buyGPU4 = document.getElementById("gpu4").addEventListener("click", function() {
+    if (Data.gpuc[4] <= Data.hessCoin)
+        buyGPU(4);
+});
+Game.buyGPU5 = document.getElementById("gpu5").addEventListener("click", function() {
+    if (Data.gpuc[5] <= Data.hessCoin)
+        buyGPU(5);
+});
+Game.buyGPU6 = document.getElementById("gpu6").addEventListener("click", function() {
+    if (Data.gpuc[6] <= Data.hessCoin)
+        buyGPU(6);
+});
 //--------------------------INF-------------------------------
 Game.buyINF0 = document.getElementById("inf0").addEventListener("click", function() {
     if (Data.infc[0] <= Data.hessCoin)
         buyINF(0);
+});
+Game.buyINF1 = document.getElementById("inf1").addEventListener("click", function() {
+    if (Data.infc[1] <= Data.hessCoin)
+        buyINF(1);
+});
+Game.buyINF2 = document.getElementById("inf2").addEventListener("click", function() {
+    if (Data.infc[2] <= Data.hessCoin)
+        buyINF(2);
+});
+Game.buyINF3 = document.getElementById("inf3").addEventListener("click", function() {
+    if (Data.infc[3] <= Data.hessCoin)
+        buyINF(3);
+});
+Game.buyINF4 = document.getElementById("inf4").addEventListener("click", function() {
+    if (Data.infc[4] <= Data.hessCoin)
+        buyINF(4);
+});
+Game.buyINF5 = document.getElementById("inf5").addEventListener("click", function() {
+    if (Data.infc[5] <= Data.hessCoin)
+        buyINF(5);
+});
+Game.buyINF6 = document.getElementById("inf6").addEventListener("click", function() {
+    if (Data.infc[6] <= Data.hessCoin)
+        buyINF(6);
 });
 
 
