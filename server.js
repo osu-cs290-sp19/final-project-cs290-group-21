@@ -4,6 +4,7 @@ var exphbs = require('express-handlebars');
 var MongoClient = require('mongodb').MongoClient;
 var app = express();
 
+/*
 var mongoHost = process.env.MONGO_HOST;
 var mongoPort = process.env.MONGO_PORT || 27017;
 var mongoUser = process.env.MONGO_USER;
@@ -11,6 +12,7 @@ var mongoPassword = process.env.MONGO_PASSWORD;
 var mongoDBName = process.env.MONGO_DB_NAME;
 
 var mongoUrl = `mongodb://${mongoUser}:${mongoPassword}@${mongoHost}:${mongoPort}/${mongoDBName}`;
+*/
 var db = null;
 var port = process.env.PORT || 3000;
 
@@ -19,7 +21,11 @@ app.set('view engine', 'handlebars');
 
 //send to homepage
 app.get('/highScores', function(req, res, next){
-    res.status(200).render('highScores');
+    res.status(200).render('scores',
+        {
+            name: "David",
+            score: "420"
+        });
 });
 
 //404 if page doesn't exist
@@ -28,6 +34,11 @@ app.get('*', function (req, res, next) {
 });
 
 //starts up server
+
+app.listen(port, function(){
+    console.log("Server listening on port ", port);
+});
+/*
 MongoClient.connect(mongoUrl, function (err, client) {
     if(err){
         throw err;
@@ -36,4 +47,4 @@ MongoClient.connect(mongoUrl, function (err, client) {
     app.listen(port, function(){
         console.log("Server listening on port ", port);
     });
-});
+});*/
