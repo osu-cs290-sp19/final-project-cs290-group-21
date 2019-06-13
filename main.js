@@ -80,6 +80,21 @@ window.onload = function () {
     var getGPU6c = document.getElementById("gpu6c");
     var getGPU6a = document.getElementById("gpu6a");
 
+    var getINF0c = document.getElementById("inf0c");
+    var getINF0a = document.getElementById("inf0a");
+    var getINF1c = document.getElementById("inf1c");
+    var getINF1a = document.getElementById("inf1a");
+    var getINF2c = document.getElementById("inf2c");
+    var getINF2a = document.getElementById("inf2a");
+    var getINF3c = document.getElementById("inf3c");
+    var getINF3a = document.getElementById("inf3a");
+    var getINF4c = document.getElementById("inf4c");
+    var getINF4a = document.getElementById("inf4a");
+    var getINF5c = document.getElementById("inf5c");
+    var getINF5a = document.getElementById("inf5a");
+    var getINF6c = document.getElementById("inf6c");
+    var getINF6a = document.getElementById("inf6a");
+
     //Per Frame
     function update() {
         Data.value = totalprice();
@@ -104,7 +119,20 @@ window.onload = function () {
         getGPU6c = Data.gpuc[6];
         getGPU6a = Data.gpua[6];
 
-
+        getINF0c = Data.infc[0];
+        getINF0a = Data.infa[0];
+        getINF1c = Data.infc[1];
+        getINF1a = Data.infa[1];
+        getINF2c = Data.infc[2];
+        getINF2a = Data.infa[2];
+        getINF3c = Data.infc[3];
+        getINF3a = Data.infa[3];
+        getINF4c = Data.infc[4];
+        getINF4a = Data.infa[4];
+        getINF5c = Data.infc[5];
+        getINF5a = Data.infa[5];
+        getINF6c = Data.infc[6];
+        getINF6a = Data.infa[6];
 
         setTimeout(update, mTime);
     }
