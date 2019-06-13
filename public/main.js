@@ -2,12 +2,14 @@
 function save() {
 
 }
-var save = document.getElementById("save").addEventListener("click", function() {
+var saveButton = document.getElementById("save").addEventListener("click", function() {
     save();
 });
-var reset = document.getElementById("reset").addEventListener("click", function() {
-    confirm("Are you sure you want to reset?");
-    reset();
+var resetButton = document.getElementById("reset").addEventListener("click", function() {
+    if(confirm("Are you sure you want to reset?")){
+        reset();
+    }
+    
 });
 //-----------------------------GAME LOGIC-------------------------------
 
@@ -26,11 +28,11 @@ Data.money = 0;
 Data.gpua = [0,0,0,0,0,0,0];
 Data.infa = [0,0,0,0,0,0,0];
 //cost of things
-Data.gpuc = [1,10,100,1000,10000,100000,1000000];
-Data.infc = [1,10,100,1000,10000,100000,1000000];
+Data.gpuc = [1,5,50,150,300,1000,5000];
+Data.infc = [1,5,50,150,300,1000,5000];
 //power of things (may not be needed)
-Data.gpup = [1,10,100,1000,10000,100000,1000000];
-Data.infp = [1,10,100,1000,10000,100000,1000000];
+Data.gpup = [1,5,50,150,300,1000,5000];
+Data.infp = [1,5,50,150,300,1000,5000];
 
 var result = '';
 //Time scale
@@ -241,6 +243,6 @@ function reset() {
     Data.money = 0;
     Data.gpua = [0,0,0,0,0,0,0];
     Data.infa = [0,0,0,0,0,0,0];
-    Data.gpuc = [1,10,100,1000,10000,100000,1000000];
-    Data.infc = [1,10,100,1000,10000,100000,1000000];
+    Data.gpuc = [1,5,50,150,300,1000,5000];
+    Data.infc = [1,5,50,150,300,1000,5000];
 }
