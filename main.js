@@ -64,14 +64,47 @@ window.onload = function () {
     var hessAmount = document.getElementById("hessCoins");
     var hessValue = document.getElementById("value");
     var hessMoney = document.getElementById("money");
+
+    var getGPU0c = document.getElementById("gpu0c");
+    var getGPU0a = document.getElementById("gpu0a");
+    var getGPU1c = document.getElementById("gpu1c");
+    var getGPU1a = document.getElementById("gpu1a");
+    var getGPU2c = document.getElementById("gpu2c");
+    var getGPU2a = document.getElementById("gpu2a");
+    var getGPU3c = document.getElementById("gpu3c");
+    var getGPU3a = document.getElementById("gpu3a");
+    var getGPU4c = document.getElementById("gpu4c");
+    var getGPU4a = document.getElementById("gpu4a");
+    var getGPU5c = document.getElementById("gpu5c");
+    var getGPU5a = document.getElementById("gpu5a");
+    var getGPU6c = document.getElementById("gpu6c");
+    var getGPU6a = document.getElementById("gpu6a");
+
     //Per Frame
     function update() {
         Data.value = totalprice();
         Data.money = Data.value * Data.hessCoin;
 
-        Data.hessAmount.innerHTML = Data.hessCoin;
-        Data.hessValue.innerHTML = Data.value;
-        Data.hessMoney.innerHTML = Math.trunc(Data.money);
+        hessAmount.innerHTML = Data.hessCoin;
+        hessValue.innerHTML = Data.value;
+        hessMoney.innerHTML = Math.trunc(Data.money);
+
+        getGPU0c = Data.gpuc[0];
+        getGPU0a = Data.gpua[0];
+        getGPU1c = Data.gpuc[1];
+        getGPU1a = Data.gpua[1];
+        getGPU2c = Data.gpuc[2];
+        getGPU2a = Data.gpua[2];
+        getGPU3c = Data.gpuc[3];
+        getGPU3a = Data.gpua[3];
+        getGPU4c = Data.gpuc[4];
+        getGPU4a = Data.gpua[4];
+        getGPU5c = Data.gpuc[5];
+        getGPU5a = Data.gpua[5];
+        getGPU6c = Data.gpuc[6];
+        getGPU6a = Data.gpua[6];
+
+
 
         setTimeout(update, mTime);
     }
