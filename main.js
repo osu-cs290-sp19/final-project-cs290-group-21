@@ -173,7 +173,7 @@ Game.buyINF0 = document.getElementById("inf0").addEventListener("click", functio
 function totalperClick () {
     var total = 0;
     for (var i = 0; i < 7; i++) {
-        total += Data.gpua[i] * Data.gpup[i];
+        total += Data.gpua[i] * Data.gpup[i]; 
     }
     return total;
 }
