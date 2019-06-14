@@ -198,6 +198,7 @@ font-size: 20px;
 		border-width: 4px;
 		min-height: 520px;
 		width: 350px;
+	
 }
 
 .infbutton{
@@ -270,14 +271,14 @@ th, td{
 #tablekey{
 	font-size: 35px;
 }
-/* 404 
-#middle{
+ 
+#space{
 	display: flex;
 	justify-content: center;
 	margin-top: 100px;
 	font-size: 42px;
 }
-*/
+
 
 
 #buylegend{
