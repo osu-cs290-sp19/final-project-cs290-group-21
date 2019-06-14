@@ -259,7 +259,11 @@ function reset() {
     document.getElementById("hash").innerHTML = '';
 }
 function save() {
-    var myJSON = JSON.stringify(Data);
-    localStorage.setItem("data", myJSON);
-    const username = prompt("Enter your name to save your score.");
+    const username = prompt("Enter your name.");
+    var Save = {};
+    Save.name = username;
+    Save.score = Data.money;
+
+    var myJSON = JSON.stringify(Save);
+    console.log(myJSON);
 }
