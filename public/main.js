@@ -72,7 +72,7 @@ var Game = {};
 
 //Get HTML
 window.onload = function () {
-    Game = localStorage.data;
+    Game = localStorage.getItem("data");
     var hessAmount = document.getElementById("hessCoins");
     var hessValue = document.getElementById("value");
     var hessMoney = document.getElementById("money");
@@ -259,5 +259,6 @@ function reset() {
     document.getElementById("hash").innerHTML = '';
 }
 function save() {
-    localStorage.data = Data;
+    var myJSON = JSON.stringify(Data);
+    localStorage.setItem("data", myJSON);
 }
