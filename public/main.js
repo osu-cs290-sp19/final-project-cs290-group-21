@@ -107,6 +107,11 @@ window.onload = function () {
     var getINF6c = document.getElementById("inf6c");
     var getINF6a = document.getElementById("inf6a");
 
+
+    var getInfTotal = document.getElementById("infTotal");
+    var getgpuTotal = document.getElementById("gpuTotal");
+    
+    
     //Per Frame
     function update() {
         Data.value += totalprice() * (17/1000);
@@ -147,6 +152,11 @@ window.onload = function () {
         getINF6c.innerHTML = Math.trunc(Data.infc[6]);
         getINF6a.innerHTML = Data.infa[6];
 
+
+
+        getInfTotal.innerHTML = totalprice();
+        getgpuTotal.innerHTML = totalperClick();
+        
         setTimeout(update, mTime);
     }
     update();
@@ -245,4 +255,6 @@ function reset() {
     Data.infa = [0,0,0,0,0,0,0];
     Data.gpuc = [1,5,50,150,300,1000,5000];
     Data.infc = [1,5,50,150,300,1000,5000];
+    result = '';
+    document.getElementById("hash").innerHTML = '';
 }
