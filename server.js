@@ -23,11 +23,11 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 
-console.log("Unsorted JSON: " + scoreData);
+console.log(scoreData);
 //sends to high scores
 app.get('/highScores', function(req, res, next){
     scoreData.sort(function(a,b){ return a.score < b.score; });
-    console.log("Sorted by score: " + scoreData);
+    console.log(scoreData);
     res.status(200).render('scorePage', {
         scoresArr: scoreData
     });
