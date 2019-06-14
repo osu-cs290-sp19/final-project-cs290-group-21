@@ -1,7 +1,5 @@
 //----------------------------WEBPAGE LOGIC-----------------------------
-function save() {
 
-}
 var saveButton = document.getElementById("save").addEventListener("click", function() {
     save();
 });
@@ -71,8 +69,10 @@ function buyINF(type) {
     Data.infc[type] *= 2;
 }
 var Game = {};
+
 //Get HTML
 window.onload = function () {
+    Game = localStorage.data;
     var hessAmount = document.getElementById("hessCoins");
     var hessValue = document.getElementById("value");
     var hessMoney = document.getElementById("money");
@@ -257,4 +257,7 @@ function reset() {
     Data.infc = [1,5,50,150,300,1000,5000];
     result = '';
     document.getElementById("hash").innerHTML = '';
+}
+function save() {
+    localStorage.data = Data;
 }
