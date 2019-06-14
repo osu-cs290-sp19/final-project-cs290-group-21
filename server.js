@@ -28,8 +28,8 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 //sends to high scores
-app.get('/public/highScores', function(req, res, next){
-    res.status(200).render('index',
+app.get('/highScores', function(req, res, next){
+    res.status(200).render('scorePage',
         {
             name: "David",
             score: "420"
