@@ -60,7 +60,7 @@ function buyGPU(type) {
     Data.gpua[type] += 1;
     Data.perClick += Data.gpup[type];
     Data.hessCoin -= Data.gpuc[type];
-    Data.gpuc[type] *= 1.15;
+    Data.gpuc[type] *= 2;
 }
 //purchase a new inf
     //type is array spot
@@ -68,7 +68,7 @@ function buyINF(type) {
     Data.infa[type] += 1;
     Data.value += Data.infp[type];
     Data.hessCoin -= Data.infc[type];
-    Data.infc[type] *= 1.15;
+    Data.infc[type] *= 2;
 }
 var Game = {};
 //Get HTML
@@ -109,12 +109,12 @@ window.onload = function () {
 
     //Per Frame
     function update() {
-        Data.value = totalprice();
+        Data.value += totalprice() * (17/1000);
         Data.money = Data.value * Data.hessCoin;
 
         //may cause math problems
         hessAmount.innerHTML = Math.trunc(Data.hessCoin);
-        hessValue.innerHTML = Data.value;
+        hessValue.innerHTML = Math.trunc(Data.value);
         hessMoney.innerHTML = Math.trunc(Data.money);
 
         getGPU0c.innerHTML = Math.trunc(Data.gpuc[0]);
@@ -230,7 +230,7 @@ function totalperClick () {
     return total;
 }
 function totalprice () {
-    var total = 1;
+    var total = 0;
     for (var i = 0; i < 7; i++) {
         total += Data.infa[i] * Data.infp[i];
     }
