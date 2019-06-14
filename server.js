@@ -20,17 +20,26 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 //send to homepage
-app.get('/highScores', function(req, res, next){
-    res.status(200).render('scores',
+/*app.get('/', function(req, res, next) {
+    res.sendfile('public/index.html');
+});
+
+ */
+app.use(express.static('public'));
+
+//sends to high scores
+app.get('/public/highScores', function(req, res, next){
+    res.status(200).render('index',
         {
             name: "David",
             score: "420"
         });
 });
 
+
 //404 if page doesn't exist
 app.get('*', function (req, res, next) {
-    res.status(404).render('404');
+    res.status(404).sendfile('public/404.html');
 });
 
 //starts up server
