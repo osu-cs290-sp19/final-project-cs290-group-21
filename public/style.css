@@ -52,6 +52,27 @@ h2{
 	align-content: stretch;
 	
 }
+
+/* left style */
+.gpubutton{
+	display: flex;
+	flex-direction: row;
+	align-content: space-between;
+	justify-content: space-between;
+	padding: 10px 10px;
+	margin: 0 5px;
+	font-weight: bold;
+	color: whitesmoke;
+	border-style: solid;
+	border-color: #858585;
+	width: 300px;
+	height: 30px;
+	margin: 2px;
+
+}
+.gpubutton:hover{
+	background-color: #858585;
+}
 .gpustyle{
 
 		display: flex;
@@ -67,9 +88,11 @@ h2{
 		width: 350px;
 		background-color: #333;
 		
+}
 
-		
-	
+#gpuTotal{
+	display: flex;
+	justify-content: center;
 }
 /*middle style*/
 
@@ -91,6 +114,7 @@ h2{
 		background-color: #333;
 	
 }
+
 /* mine button */
 .clickerstyle {
 	box-shadow: 0 9px #3a3b3b;
@@ -175,32 +199,6 @@ font-size: 20px;
 		min-height: 520px;
 		width: 350px;
 }
-#coinsperclick{
-	font-weight: bold;
-	color: whitesmoke;
-}
-#pricepersec{
-	font-weight: bold;
-	color: whitesmoke;
-}
-
-/* right style */
-.gpubutton{
-	display: flex;
-	flex-direction: row;
-	align-content: space-between;
-	justify-content: space-between;
-	padding: 10px 10px;
-	margin: 0 5px;
-	font-weight: bold;
-	color: whitesmoke;
-	border-style: solid;
-	border-color: #858585;
-	width: 300px;
-	height: 30px;
-	margin: 2px;
-
-}
 
 .infbutton{
 	display: flex;
@@ -216,6 +214,30 @@ font-size: 20px;
 	width: 300px;
 	height: 30px;
 	margin: 2px;
+}
+.infbutton:hover{
+	background-color: #858585;
+}
+
+#infTotal{
+	display: flex;
+	justify-content: center;
+}
+#coinsperclick{
+	font-weight: bold;
+	color: whitesmoke;
+}
+#pricepersec{
+	font-weight: bold;
+	color: whitesmoke;
+}
+#eachtotal{
+	color: #19d626;
+	font-size: 18px;
+}
+#money{
+	color: #19d626;
+	font-size: 18px;
 }
 
 #highscore{
@@ -261,3 +283,4 @@ th, td{
 #buylegend{
 	color:#19d626;
 }
+

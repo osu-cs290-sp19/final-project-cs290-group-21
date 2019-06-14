@@ -1,7 +1,5 @@
 //----------------------------WEBPAGE LOGIC-----------------------------
-function save() {
 
-}
 var saveButton = document.getElementById("save").addEventListener("click", function() {
     save();
 });
@@ -60,7 +58,7 @@ function buyGPU(type) {
     Data.gpua[type] += 1;
     Data.perClick += Data.gpup[type];
     Data.hessCoin -= Data.gpuc[type];
-    Data.gpuc[type] *= 1.15;
+    Data.gpuc[type] *= 2;
 }
 //purchase a new inf
     //type is array spot
@@ -68,11 +66,13 @@ function buyINF(type) {
     Data.infa[type] += 1;
     Data.value += Data.infp[type];
     Data.hessCoin -= Data.infc[type];
-    Data.infc[type] *= 1.15;
+    Data.infc[type] *= 2;
 }
 var Game = {};
+
 //Get HTML
 window.onload = function () {
+    Game = localStorage.getItem("data");
     var hessAmount = document.getElementById("hessCoins");
     var hessValue = document.getElementById("value");
     var hessMoney = document.getElementById("money");
@@ -107,14 +107,19 @@ window.onload = function () {
     var getINF6c = document.getElementById("inf6c");
     var getINF6a = document.getElementById("inf6a");
 
+
+    var getInfTotal = document.getElementById("infTotal");
+    var getgpuTotal = document.getElementById("gpuTotal");
+    
+    
     //Per Frame
     function update() {
-        Data.value = totalprice();
+        Data.value += totalprice() * (17/1000);
         Data.money = Data.value * Data.hessCoin;
 
         //may cause math problems
         hessAmount.innerHTML = Math.trunc(Data.hessCoin);
-        hessValue.innerHTML = Data.value;
+        hessValue.innerHTML = Math.trunc(Data.value);
         hessMoney.innerHTML = Math.trunc(Data.money);
 
         getGPU0c.innerHTML = Math.trunc(Data.gpuc[0]);
@@ -147,6 +152,11 @@ window.onload = function () {
         getINF6c.innerHTML = Math.trunc(Data.infc[6]);
         getINF6a.innerHTML = Data.infa[6];
 
+
+
+        getInfTotal.innerHTML = totalprice();
+        getgpuTotal.innerHTML = totalperClick();
+        
         setTimeout(update, mTime);
     }
     update();
@@ -230,7 +240,7 @@ function totalperClick () {
     return total;
 }
 function totalprice () {
-    var total = 1;
+    var total = 0;
     for (var i = 0; i < 7; i++) {
         total += Data.infa[i] * Data.infp[i];
     }
@@ -245,4 +255,11 @@ function reset() {
     Data.infa = [0,0,0,0,0,0,0];
     Data.gpuc = [1,5,50,150,300,1000,5000];
     Data.infc = [1,5,50,150,300,1000,5000];
+    result = '';
+    document.getElementById("hash").innerHTML = '';
+}
+function save() {
+    var myJSON = JSON.stringify(Data);
+    localStorage.setItem("data", myJSON);
+    const username = prompt("Enter your name to save your score.");
 }
