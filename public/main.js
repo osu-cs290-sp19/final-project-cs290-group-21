@@ -261,4 +261,5 @@ function reset() {
 function save() {
     var myJSON = JSON.stringify(Data);
     localStorage.setItem("data", myJSON);
+    const username = prompt("Enter your name to save your score.");
 }
