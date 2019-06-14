@@ -1,5 +1,6 @@
 var express = require("express");
 var exphbs = require('express-handlebars');
+var scoreData = require("./scores.json");
 
 var MongoClient = require('mongodb').MongoClient;
 var app = express();
@@ -19,21 +20,17 @@ var port = process.env.PORT || 3000;
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-//send to homepage
-/*app.get('/', function(req, res, next) {
-    res.sendfile('public/index.html');
-});
-
- */
 app.use(express.static('public'));
 
+
+console.log("Unsorted JSON: " + scoreData);
 //sends to high scores
 app.get('/highScores', function(req, res, next){
-    res.status(200).render('scorePage',
-        {
-            name: "David",
-            score: "420"
-        });
+    scoreData.sort(function(a,b){ return a.score < b.score; });
+    console.log("Sorted by score: " + scoreData);
+    res.status(200).render('scorePage', {
+        scoresArr: scoreData
+    });
 });
 
 

@@ -1,6 +1,18 @@
-{
-  "scores": {
-    "name": "Gregory Blood",
-    "score": "1590239059352815"
+[
+  {
+    "name": "greg",
+    "score":  5
+  },
+  {
+    "name":  "David",
+    "score": 432
+  },
+  {
+    "name": "Patrick",
+    "score": 654231345462315
+  },
+  {
+    "name": "Rob",
+    "score": 9001
   }
-}
+]

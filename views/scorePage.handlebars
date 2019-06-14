@@ -4,6 +4,7 @@
         <th>Name</th>
         <th>HessCoins Collected</th>
     </tr>
-
-    {{> scores}}
+    {{#each scoresArr}}
+        {{> scores}}
+    {{/each}}
 </table>
